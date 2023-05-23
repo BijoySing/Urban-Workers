@@ -1,0 +1,97 @@
+/* Reset some default styles */
+body, p, ul, li {
+    margin: 0;
+    padding: 0px;
+
+  }
+  ul li.login {
+    margin-left: 510px;
+  }
+  ul li {
+    margin-right: 10px;
+  }  
+  .imgg {
+    width: 201px; /* Set the desired width */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a box shadow */
+  }
+  
+  h1{
+    padding: 50px 0px 0px 0px;
+  }
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+
+  }
+
+  header {
+    background-color: #333;
+    padding: 10px;
+  }
+  .e{
+    color: blue;
+  }
+  h4{
+    font: 0.8em sans-serif;
+    color: blue;
+
+  }
+  
+  
+  nav ul li {
+    display: inline;
+    margin-right: 5px;
+   }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 10;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  section ul {
+    list-style-type: none;
+  }
+  
+  section li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  section li img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  section li h3 {
+    font-size: 16px;
+  }
+  
+  section li p {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  footer{
+    padding: 50px 5px 10px 5px;
+  }
