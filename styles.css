@@ -120,13 +120,109 @@
   }
 .btn-login{
   
-  padding:10px;
+  padding:8px;
   font-size: large;
   background-color: rgb(70, 197, 43);
-  border-radius: 50px;
+  border-radius: 25px;
   padding-left: 20px;
   padding-right: 20px;
   color: white;
   font-weight: 500;
   cursor: pointer;
+}
+.btn-login:hover {
+  background-color: rgb(58, 167, 37); /* Change the color for hover */
+  transform: scale(1.05); /* Add a slight scale effect on hover */
+}
+/* footer */
+.foot {
+  background:rgb(51, 50, 50);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+  padding: 1px 1px 1px 1px;
+
+}
+
+.x6 {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.pic6 {
+  display: flex;
+
+  /* //   border: 4px red solid; */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 35px;
+  font-weight: 800;
+
+  padding: 20px 2px;
+}
+
+.pic6 img {
+  width: 60px;
+  height: 40px;
+
+}
+
+.list1 {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+  color: aliceblue;
+  font-size: 17px;
+
+}
+
+.list1 li a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.list2 li a {
+  color: rgb(189, 191, 194);
+  font-weight: 500;
+  text-decoration: none;
+  list-style: none;
+}
+
+.icon5 {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px 5px 10px 100px;
+
+}
+
+.icon5 img {
+  width: 32px;
+  cursor: pointer;
+}
+
+.a {
+  color: #f948b2;
+}
+
+.list2 {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 50px;
+  margin-top: 50px;
+  font-size: 10px;
+
+}
+
+.p0 {
+  color: #9793a3;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 15px;
 }
