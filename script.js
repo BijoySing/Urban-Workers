@@ -30,3 +30,10 @@ function changeItem() {
 
 // Call changeItem every 0.5 seconds
 setInterval(changeItem, 500);
+import {
+    Input,
+    Ripple,
+    initTE,
+  } from "tw-elements";
+  
+  initTE({ Input, Ripple });
