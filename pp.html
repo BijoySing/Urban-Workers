@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css"> <!-- Include the navbar CSS -->
+    <link rel="icon" href="images/search-employee-8969.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <title>Urban Workers</title>
+</head>
+
+<body>
+    <div class="nav">
+        <!-- ... Your existing navbar code ... -->
+    </div>
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul class="service-list">
+            <li class="service-list-item" onclick="showContent('acService')">AC Servicing</li>
+            <li class="service-list-item" onclick="showContent('paintingService')">Painting Services</li>
+            <li class="service-list-item" onclick="showContent('cleaningService')">Home Cleaning</li>
+            <!-- Add more service items here -->
+        </ul>
+    </div>
+
+    <!-- Content sections -->
+    <div class="content">
+        <div id="acService" style="display: none;">
+            Content for AC Servicing
+        </div>
+        <div id="paintingService" style="display: none;">
+            Content for Painting Services
+        </div>
+        <div id="cleaningService" style="display: none;">
+            Content for Home Cleaning
+        </div>
+        <!-- Add more content sections for other services -->
+    </div>
+
+    <!-- Your existing HTML content -->
+    <section class="our-Services" id="our-service">
+        <!-- ... Your existing content ... -->
+    </section>
+
+    <section class="About us">
+        <!-- ... Your existing content ... -->
+    </section>
+
+    <footer>
+        <!-- ... Your existing footer content ... -->
+    </footer>
+
+    <script>
+        function showContent(serviceId) {
+            const contentSections = document.querySelectorAll('.content > div');
+            contentSections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            const selectedSection = document.getElementById(serviceId);
+            selectedSection.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
