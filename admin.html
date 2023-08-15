@@ -1,80 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Admin Dashboard</title>
     <style>
-        /* Your existing CSS styles here */
-
-        .dashboard-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
         }
 
-        .dashboard-card {
-            background-color: #f6f9f2;
-            padding: 20px;
+        .dashboard {
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
         }
 
-        .dashboard-card h3 {
-            margin: 0;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .dashboard-card p {
-            margin: 0;
-            font-size: 14px;
+        h1 {
             color: #333;
+            text-align: center;
         }
 
-        .approval-button {
-            background-color: #3490dc;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 5px;
-            cursor: pointer;
+        h2 {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        .statistics {
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="nav bg-gray-300 rounded-xl">
-        <!-- Your navigation bar content here -->
-    </div>
-    <div class="dashboard-container">
-        <div class="dashboard-card">
-            <h3>Total Clients</h3>
-            <p><?php
-                // You can fetch and display the total number of clients signed up
-                // Example: $totalClients = fetchTotalClientsFromDatabase();
-                // echo $totalClients;
-            ?></p>
-        </div>
-        <div class="dashboard-card">
-            <h3>Total Workers</h3>
-            <p><?php
-                // You can fetch and display the total number of workers signed up
-                // Example: $totalWorkers = fetchTotalWorkersFromDatabase();
-                // echo $totalWorkers;
-            ?></p>
-        </div>
-        <div class="dashboard-card">
-            <h3>Worker Signup Approvals</h3>
-            <p><?php
-                // You can display a list of workers pending approval and provide approval buttons
-                // Example:
-                // $pendingWorkers = fetchPendingWorkersFromDatabase();
-                // foreach ($pendingWorkers as $worker) {
-                //     echo $worker['full_name'] . ' - <button class="approval-button">Approve</button><br>';
-                // }
-            ?></p>
+    <div class="dashboard">
+        <h1>Admin Dashboard</h1>
+        <div class="statistics">
+            <h2>Statistics</h2>
+            <p>Total Client Signups: <span id="clientCount"></span></p>
+            <p>Total Worker Signups: <span id="workerCount"></span></p>
+            <p>Total Approved Workers: <span id="approvedWorkerCount"></span></p>
         </div>
     </div>
+    <script src="admin.js"></script>
 </body>
 </html>
