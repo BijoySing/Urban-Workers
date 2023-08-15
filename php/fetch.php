@@ -106,7 +106,31 @@
                             <p>Service: " . $result['services'] . "</p>
                             <p>Address: " . $result['address'] . "</p>
                             <p>Contact: " . $result['contact'] . "</p>
+                            <p>ratings: " . $result['ratings'] . "</p>
+                            <p>status: " . $result['status'] . "</p>
+
+                            <p>give rating
+                            <form action='updaterating.php' method='get'>
+    <input type='hidden' name='ID' value='" . $result['ID'] . "'>
+    <input type='hidden' name='email' value='" . $result['email'] . "'>
+    <label for='rating'>Rating:</label>
+    <select name='ratings' id='ratings'>
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option value='5'>5</option>
+    </select>
+    <input type='submit' value='Submit Rating'>
+</form>
+
+                           
+                        </p>
+
+                            
+                            
                         </div>
+                        
                     </div>";
                 }
             } else {
@@ -116,8 +140,12 @@
         } else {
             echo "<p>Service parameter missing.</p>";
         }
+        
         ?>
     </div>
+    
 </body>
 
 </html>
+
+
