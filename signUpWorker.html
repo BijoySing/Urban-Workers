@@ -25,7 +25,7 @@
     </div>
   </div>
   <!-- component -->
-  <form  method="POST" action=" php/signupWorker.php">
+  <form method="POST" action=" php/signupWorker.php" enctype="multipart/form-data">
     <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
       <div class="container max-w-screen-lg mx-auto">
         <div>
@@ -72,17 +72,18 @@
                   </div>
                   <div class="md:col-span-2 font-semibold text-gray-600 mb-1">
                     <label for="num">Contact No.</label>
-                    <input type="" name="contact" id="number" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value=""
-                      placeholder="+880" />
+                    <input type="" name="contact" id="number" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                      value="" placeholder="+880" />
                   </div>
                   <div class="md:col-span-5 font-semibold text-gray-600 ">
-                    <label >Your service</label>
+                    <label>Your service</label>
                     <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
 
-                      <select name="service" id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-100">
-                        <option value="city1">AC1</option>
-                        <option value="city2">freze 2</option>
-                        <option value="city3">City 3</option>
+                      <select name="services" id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-100">
+                        <option value="AC Servicing">AC Servicing</option>
+                        <option value="Painting Servicing">Painting Servicing</option>
+                        <option value="Home cleaning">Home cleaning</option>
+                        
                         <!-- Add more options here -->
                       </select>
                     </div>
@@ -95,15 +96,21 @@
 
                   <div class="md:col-span-3 font-semibold text-gray-600">
                     <label for="email">Confirm Password</label>
-                    <input type="text" name="confirm" id="email" class="h-10 border mt-1 rounded px-4 w-full bg-gray-100"
-                      value="" placeholder="" />
+                    <input type="text" name="confirm" id="email"
+                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-100" value="" placeholder="" />
                   </div>
                 </div>
               </div>
+              <div class="md:col-span-5 font-semibold text-gray-600">
+                <label for="picture">Profile Picture</label>
+                <input type="file" name="picture" id="picture" class="mt-1">
+
+            </div>
 
               <div class="md:col-span-5 text-right">
                 <div class="inline-flex items-end">
-                  <input type="submit" value="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  <input type="submit" value="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 </div>
               </div>
 
