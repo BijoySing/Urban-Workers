@@ -25,7 +25,7 @@
     </div>
   </div>
   <!-- component -->
-  <form method="POST" action=" php/signupWorker.php">
+  <form method="POST" action=" php/signupWorker.php" enctype="multipart/form-data">
     <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
       <div class="container max-w-screen-lg mx-auto">
         <div>
@@ -79,13 +79,11 @@
                     <label>Your service</label>
                     <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
 
-                      <select name="service" id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-100">
-                        <option value="city1">                          AC Servicing
+                      <select name="services" id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-100">
+                        <option value="AC Servicing">AC Servicing</option>
+                        <option value="Painting Servicing">Painting Servicing</option>
+                        <option value="Home cleaning">Home cleaning</option>
                         
-
-                        </option>
-                        <option value="city2">Painting Servicing</option>
-                        <option value="city3">Home cleaning</option>
                         <!-- Add more options here -->
                       </select>
                     </div>
@@ -103,6 +101,11 @@
                   </div>
                 </div>
               </div>
+              <div class="md:col-span-3 font-semibold text-gray-600 text-center mt-2">
+                <label for="picture">Profile Picture</label>
+                <input type="file" name="picture" id="picture" class="mt-1">
+
+            </div>
 
               <div class="md:col-span-5 text-right">
                 <div class="inline-flex items-end">

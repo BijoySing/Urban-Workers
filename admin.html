@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <title>Admin Dashboard</title>
+    <style>
+        /* Your existing CSS styles here */
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .dashboard-card {
+            background-color: #f6f9f2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .dashboard-card h3 {
+            margin: 0;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .approval-button {
+            background-color: #3490dc;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav bg-gray-300 rounded-xl">
+        <!-- Your navigation bar content here -->
+    </div>
+    <div class="dashboard-container">
+        <div class="dashboard-card">
+            <h3>Total Clients</h3>
+            <p><?php
+                // You can fetch and display the total number of clients signed up
+                // Example: $totalClients = fetchTotalClientsFromDatabase();
+                // echo $totalClients;
+            ?></p>
+        </div>
+        <div class="dashboard-card">
+            <h3>Total Workers</h3>
+            <p><?php
+                // You can fetch and display the total number of workers signed up
+                // Example: $totalWorkers = fetchTotalWorkersFromDatabase();
+                // echo $totalWorkers;
+            ?></p>
+        </div>
+        <div class="dashboard-card">
+            <h3>Worker Signup Approvals</h3>
+            <p><?php
+                // You can display a list of workers pending approval and provide approval buttons
+                // Example:
+                // $pendingWorkers = fetchPendingWorkersFromDatabase();
+                // foreach ($pendingWorkers as $worker) {
+                //     echo $worker['full_name'] . ' - <button class="approval-button">Approve</button><br>';
+                // }
+            ?></p>
+        </div>
+    </div>
+</body>
+</html>

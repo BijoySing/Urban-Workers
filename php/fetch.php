@@ -1,46 +1,123 @@
-<html>
-  <head>
-    <title> MY_TABLE </title>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <title>Workers Information</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .header {
+            color: black;
+            font-weight: 700;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #f6f9f2;
+            padding: 20px;
+        }
+
+        .card {
+            border-radius: 20px;
+            /* padding: 20px; */
+            margin: 20px;
+            width: 300px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            background-color: #dbc7c2;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding-bottom:20px ;
+        }
+
+        .card img {
+            max-width: 300px;
+            height: 200px;
+            border-radius: 50%;
+            /* object-fit: cover; */
+            /* flex: 0 0 100px; */
+            /* margin-right: 20px; */
+        }
+
+        .card-info {
+            flex: 1;
+        }
+
+        .card-info h2 {
+            margin: 0;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .card-info p {
+            margin: 0;
+            font-size: 14px;
+            color: black;
+            padding-top: 10px;
+            font-weight: 600;
+        }
+    </style>
 </head>
+
 <body>
-  <table border="2">
-    <tr>
-      <th>full_name</th>
-      <th>service</th>
-      <th>address</th>
-      <th>contact</th>
-</tr>
-<?php 
-  //echo "welcome to the stage where we are ready to get connected to the database <br>";
-  //connecting to the db
-  $servername="localhost";
-  $username="root";
-  $password = "";
-  $database = "urban-workers";
-  $conn = mysqli_connect($servername,$username,$password,$database);
-  $sql = "SELECT * FROM signupworkers where full_name = 'bijoy' ";
-  $data = mysqli_query($conn,$sql);
-  //$result=mysqli_fetch_assoc($data);
-  $count =mysqli_num_rows($data);
-  if($count!=0)
-  {
-    
-    while($result=mysqli_fetch_assoc($data))
-    {
-       echo "
-       <tr>
-       <td>".$result['full_name']."</td>
-       <td>".$result['service']."</td>
-       <td>".$result['address']."</td>
-       <td>".$result['contact']."</td>
-       ";
-    }
-  }
-  //echo $result['sno']." ".$result['name']." ".$result['role']." ".$result['doj'];
-  //$resultCheck = mysqli_num_rows($result);
-  
-?>
-</table>
+    <div class="nav bg-gray-300 rounded-xl">
+        <div class="navbar">
+            <div class="navbar-start">
+                <a href="http://localhost/urban-workers/index.html" class="text-green-900 font-weight:900 btn btn-ghost normal-case text-2xl font-bold">Urban Workers</a>
+            </div>
+        </div>
+    </div>
+    <p class="header">Workers Information - <?php echo $_GET['service']; ?></p>
+    <hr>
+    <div class="card-container">
+        <?php
+        if (isset($_GET['service'])) {
+            $service = $_GET['service'];
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "urban-workers";
+            $conn = new mysqli($servername, $username, $password, $database);
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            $sql = "SELECT * FROM signupworkers WHERE services = '$service'";
+            $data = mysqli_query($conn, $sql);
+            $count = mysqli_num_rows($data);
+            if ($count != 0) {
+                while ($result = mysqli_fetch_assoc($data)) {
+                    echo "
+                    <div class='card'>
+                        <img src='" . $result['picture'] . "' alt='Profile Picture'>
+                        <div class='card-info'>
+                            <h2>" . $result['full_name'] . "</h2>
+                            <p>Service: " . $result['services'] . "</p>
+                            <p>Address: " . $result['address'] . "</p>
+                            <p>Contact: " . $result['contact'] . "</p>
+                        </div>
+                    </div>";
+                }
+            } else {
+                echo "<p>No data available</p>";
+            }
+            $conn->close();
+        } else {
+            echo "<p>Service parameter missing.</p>";
+        }
+        ?>
+    </div>
 </body>
+
 </html>
-   

@@ -16,6 +16,9 @@
   margin-top: 5px;
 }
 
+.hidden {
+  /* display: none; */
+}
 
 /* Navbar Start */
 .navbar-start {
