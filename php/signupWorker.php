@@ -17,6 +17,7 @@
     $conn = new mysqli($host,$dbuname,$dbpass,$dbname);
    
         $sql = "INSERT INTO signupworkers (full_name,email,address,city,contact,service,pass,confirm) values('$full_name','$email','$address','$city','$contact','$service','$pass','$confirm')";
+        
         if($conn->query($sql)){
             echo '<script>alert("Record saved successfully")</script>';
         }
