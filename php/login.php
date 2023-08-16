@@ -21,7 +21,7 @@ if (isset($_POST["login"])) {
 
     if ($result->num_rows == 1) {
         $_SESSION["email"] = $email;
-        header("Location: ../index.html"); // Redirect to user dashboard
+        header("Location: ../index1.php"); // Redirect to main page
         exit();
     } else {
         echo "Invalid username or password.";
