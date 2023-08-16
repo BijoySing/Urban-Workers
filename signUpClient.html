@@ -26,6 +26,7 @@
         </div>
     </div>
     <!-- component -->
+    <form method="POST" action=" php/signUpClient.php" enctype="multipart/form-data">
     <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
         <div class="container max-w-screen-lg mx-auto">
             <div>
@@ -76,21 +77,21 @@
                                     </div>
                                     <div class="md:col-span-2 font-semibold text-gray-600 mb-1">
                                         <label for="num">Contact No.</label>
-                                        <input type="" name="" id="number"
+                                        <input type="" name="contact" id="number"
                                             class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value=""
                                             placeholder="+880" />
                                     </div>
 
                                     <div class="md:col-span-3 font-semibold text-gray-600">
                                         <label for="email">Password</label>
-                                        <input type="text" name="email" id="email"
+                                        <input type="text" name="pass" id="email"
                                             class="h-10 border mt-1 rounded px-4 w-full bg-gray-100" value=""
                                             placeholder="" />
                                     </div>
 
                                     <div class="md:col-span-3 font-semibold text-gray-600">
                                         <label for="email">Confirm Password</label>
-                                        <input type="text" name="email" id="email"
+                                        <input type="text" name="confirm" id="email"
                                             class="h-10 border mt-1 rounded px-4 w-full bg-gray-100" value=""
                                             placeholder="" />
                                     </div>
@@ -115,6 +116,6 @@
 
     </div>
 
-
+</form>
 
 </body>

@@ -13,8 +13,8 @@
             border: 1px solid #ccc;
             border-radius: 8px;
             padding: 16px;
-            width: calc(20% - 20px); /* Distribute cards in three columns */
-            margin: 10px; /* Adjust spacing */
+            width: calc(20% - 20px);
+            margin: 10px;
             display: flex;
             align-items: center;
         }
@@ -75,31 +75,35 @@
                             <p>Service: " . $result['services'] . "</p>
                             <p>Address: " . $result['address'] . "</p>
                             <p>Contact: " . $result['contact'] . "</p>
-                            <p>ratings: " . $result['ratings'] . "</p>
-                            <p>status: " . $result['status'] . "</p>
+                            <p>Ratings: " . $result['ratings'] . "</p>
+                            <p>Status: " . $result['status'] . "</p>
+                            <p>Send Request: " . $result['send_request'] . "</p>
 
-                            <p>give rating
+                            <p>
+                            <form action='send_request.php' method='get'> <!-- Changed method to post -->
+                            <input type='hidden' name='ID' value='" . $result['ID'] . "'>
+                            <input type='hidden' name='email' value='" . $result['email'] . "'>
+                            <input type='hidden' name='send_request' value='" . $result['send_request'] . "'>
+                            <button type='submit'>Send Request</button>
+                            </form>
+                            </p>
+                            
+                            <p>
                             <form action='updaterating.php' method='get'>
-    <input type='hidden' name='ID' value='" . $result['ID'] . "'>
-    <input type='hidden' name='email' value='" . $result['email'] . "'>
-    <label for='rating'>Rating:</label>
-    <select name='ratings' id='ratings'>
-        <option value='1'>1</option>
-        <option value='2'>2</option>
-        <option value='3'>3</option>
-        <option value='4'>4</option>
-        <option value='5'>5</option>
-    </select>
-    <input type='submit' value='Submit Rating'>
-</form>
-
-                           
-                        </p>
-
-                            
-                            
+                            <input type='hidden' name='ID' value='" . $result['ID'] . "'>
+                            <input type='hidden' name='email' value='" . $result['email'] . "'>
+                            <label for='rating'>Rating:</label>
+                            <select name='ratings' id='ratings'>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            </select>
+                            <input type='submit' value='Submit Rating'>
+                            </form>
+                            </p>
                         </div>
-                        
                     </div>";
                 }
             } else {
@@ -110,11 +114,7 @@
         } else {
             echo "<p>Service parameter missing.</p>";
         }
-        
         ?>
     </div>
-    
 </body>
 </html>
-
-
